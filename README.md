@@ -14,6 +14,8 @@ Before creating the cluster, you need your AWS Account ID and the subnets from y
 aws sts get-caller-identity --query "Account" --output text
 
 ```
+<img width="366" height="28" alt="image" src="https://github.com/user-attachments/assets/85e6cc11-c2d6-4c3d-9900-d83bb87baf52" />
+
 
 **Get your Subnet IDs:**
 
@@ -21,6 +23,8 @@ aws sts get-caller-identity --query "Account" --output text
 aws ec2 describe-subnets --query "Subnets[*].SubnetId" --output text
 
 ```
+<img width="900" height="39" alt="image" src="https://github.com/user-attachments/assets/bd648cbb-f583-4136-ad19-5b47a710c2b9" />
+
 
 *(Note down at least two subnet IDs for the next steps).*
 
@@ -35,8 +39,11 @@ aws eks create-cluster \
   --resources-vpc-config subnetIds=<SUBNET_1>,<SUBNET_2>
 
 ```
+<img width="479" height="699" alt="image" src="https://github.com/user-attachments/assets/d46efab3-da9f-43d0-933a-f11d1222867c" />
+
 
 *Note: Cluster creation usually takes 10–15 minutes. You can check its status using `aws eks describe-cluster --name my-eks-cluster --query "cluster.status"` until it says `ACTIVE`.*
+<img width="421" height="24" alt="image" src="https://github.com/user-attachments/assets/2666187a-aebb-4d5d-9ba9-d6c1fd7d8dc3" />
 
 ### Step 3: Create the Node Group
 
