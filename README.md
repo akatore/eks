@@ -2,14 +2,29 @@ Using **`eksctl`** (which builds the cluster via CloudFormation) or deploy a **C
 
 The fastest way to spin this up using `eksctl` while adhering to their rules:
 
-### Step 1: Delete the manually created cluster
+### Step 1: Gather Your Prerequisites
 
-Since the current cluster is half-built and you can't attach nodes to it, let's clean it up first:
+Before creating the cluster, you need your AWS Account ID and the subnets from your default VPC.
+
+**Get your Account ID:**
 
 ```bash
-aws eks delete-cluster --name my-eks-cluster
+aws sts get-caller-identity --query "Account" --output text
 
 ```
+<img width="366" height="28" alt="image" src="https://github.com/user-attachments/assets/85e6cc11-c2d6-4c3d-9900-d83bb87baf52" />
+
+
+**Get your Subnet IDs:**
+
+```bash
+aws ec2 describe-subnets --query "Subnets[*].SubnetId" --output text
+
+```
+<img width="900" height="39" alt="image" src="https://github.com/user-attachments/assets/bd648cbb-f583-4136-ad19-5b47a710c2b9" />
+
+
+*(Note down at least two subnet IDs for the next steps).*
 
 ### Step 2: Create a cluster config file (`cluster.yaml`)
 
