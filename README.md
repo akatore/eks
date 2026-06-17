@@ -57,6 +57,7 @@ managedNodeGroups:
       instanceRoleARN: "arn:aws:iam::<ACCOUNT_ID>:role/AmazonEKSNodeRole"
 
 ```
+<img width="433" height="316" alt="image" src="https://github.com/user-attachments/assets/4c3db4c1-5bc8-43b9-9439-04b5db147b65" />
 
 ### Step 3: Launch with eksctl
 
