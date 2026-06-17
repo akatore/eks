@@ -2,6 +2,24 @@ Using **`eksctl`** (which builds the cluster via CloudFormation) or deploy a **C
 
 The fastest way to spin this up using `eksctl` while adhering to their rules:
 
+As we are architecting this cloud-native setup from scratch, we can easily grab the binary and install it directly into your local user directory to bypass any potential sudo permission restrictions in the lab environment.
+
+Run these commands in your terminal to download and install it:
+```
+# Download and extract the eksctl binary to /tmp
+curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+
+# Create a local bin directory and move the binary there
+mkdir -p ~/.local/bin
+mv /tmp/eksctl ~/.local/bin/
+
+# Add the local bin to your PATH for this session
+export PATH=$PATH:~/.local/bin
+
+# Verify the installation
+eksctl version
+```
+
 ### Step 1: Gather Your Prerequisites
 
 Before creating the cluster, you need your AWS Account ID and the subnets from your default VPC.
