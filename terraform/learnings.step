@@ -1,0 +1,12 @@
+
+
+1. Create EKS cluster with Terraform.
+2. Create VPC, subnets, security groups, and worker nodes.
+3. Deploy Kubernetes cluster resources and outputs.
+4. Configure kubectl using cluster kubeconfig.
+5. Deploy an application using Helm chart.
+6. Install Prometheus with Helm.
+7. Install Grafana with Helm.
+8. Install Kubernetes Dashboard.
+9. Create a bastion VM in the same VPC.
+10. Connect to bastion VM and use it to access the EKS cluster.
