@@ -1,3 +1,8 @@
+The NAT gateway allows instances in your private subnets to initiate outbound connections to the internet, and then handles the returning traffic for that established session.
+
+The Internet Gateway is fully bi-directional, so connections can be initiated from the internet and reach resources in your public subnets, and instances within those subnets can also initiate connections out to the internet, with data flowing both ways once the session is established.
+
+
 ## User
 
 1. Create EKS cluster 
